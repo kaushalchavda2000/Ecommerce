@@ -1,45 +1,48 @@
-import React from 'react'
+import React from "react";
 
-import Category from '../category/category';
+import Category from "../category/category";
 
 import "./navbar.scss";
 
 const Navbar = () => {
   return (
-    // <div className='navigation_bar'>
-    //   <Category />
-    //   <Category />
-    //   <Category />
-    //   <Category />
-    //   <Category />
-    //   <Category />
-    //   <Category />
-    //   <Category />
-    //   <Category />
-    //   <Category />
-    //   <Category />
-    //   <Category />
-    //   <Category />
-    // </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#"><Category /></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><Category /></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  )
-}
+    <nav className="abc navbar navbar-expand-md navbar-light p-0 py-xxl-3">
+      <div className="container-fluid">
+        {/* <a className="navbar-brand" href="#"></a> */}
+        <button
+          className="navbar-toggler p-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+          aria-controls="secondNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span>Categories</span>
+        </button>
+        <div className="collapse navbar-collapse justify-content-center" id="secondNavbar">
+          <ul className="navbar-nav mb-2 mb-lg-0 category_list">
+          <Category caption="clothes" />
+          <Category caption="Entertainment" />
+          <Category caption="Mobile" />  
+          <Category caption="Electronics" />
+          <Category caption="sports" />
+          <Category caption="Toys" />
+          <Category caption="Home appliences" />  
+          <Category caption="Cars" />
+          <Category caption="Vegetables" />
+          <Category caption="Drinks" />
+          <Category caption="Furniture" />  
+          <Category caption="Home & garden" />
+          <Category caption="Gatgets" />
+          <Category caption="Games" />
+          <Category caption="Books" />  
+          <Category caption="Bikes" />
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
 export default Navbar;

@@ -1,14 +1,18 @@
-import React from 'react'
+import React from "react";
 
-import "./category.scss"
+import "./category.scss";
 
-const Category = () => {
+const Category = ({caption}) => {
   return (
-    <div className='category py-1 px-4  border'>
-      <i className='icon fa-solid fa-circle-user p-1 border'></i>
-      <span className='category_name border p-1'>clothes</span>
-    </div>
-  )
-}
+    <li className="nav-item">
+      <a className="nav-link p-0" href="#">
+        <div className="category">
+          <i className="icon fa-solid fa-circle-user pt-2"></i>
+          <span className="category_caption p-1 px-3">{caption}</span>
+        </div>
+      </a>
+    </li>
+  );
+};
 
 export default Category;

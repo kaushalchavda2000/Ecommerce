@@ -4,12 +4,12 @@ import "./appbar.scss";
 
 const Appbar = () => {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <a className="navbar-brand d-flex align-items-center logo_title" href="#">
-            <span className="logo me-2" >S</span>
-            Shopka
+    <div className="appbar">
+      <nav className="navbar navbar-expand-xl navbar-light bg-light p-0">
+        <div className="container-fluid navbar_content">
+          <a className="navbar-brand d-flex align-items-center p-0" href="#">
+            <span className="logo" >S</span>
+            <div className="logo_title">Shopka</div>
           </a>
           <button
             className="navbar-toggler"
@@ -22,18 +22,19 @@ const Appbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+          {/* remove the above button and remove the collapse class below to always show navigation bar */}
           <div
-            className="collapse navbar-collapse d-lg-flex justify-content-lg-between"
+            className="collapse navbar-collapse d-xl-flex justify-content-lg-between"
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link text-black" aria-current="page" href="#">
+              <li className="nav-item list_item px-xl-3 py-xl-1">
+                <a className="nav-link" aria-current="page" href="#">
                   Sell on Shopka
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link text-black" href="#">
+              <li className="nav-item list_item px-xl-3 py-xl-1">
+                <a className="nav-link" href="#">
                   Register
                 </a>
               </li>
@@ -44,17 +45,16 @@ const Appbar = () => {
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
-                size={40}
               />
             </form>
-            <div>
-              <button className="btn btn-outline-success" type="submit">
+            <div className="py-3 py-xl-0">
+              <button className="btn sign-in-button btn-outline-primary" type="submit">
                 Sign in
               </button>
-              <button className="btn btn-outline-success mx-3" type="submit">
+              <button className="btn my-cart-button btn-outline-primary" type="submit">
                 My cart
               </button>
-              <button className="btn btn-outline-none p-0" type="submit">
+              <button className="btn user-profile-button btn-outline-none p-0" type="submit">
                 <i className="fa-solid fa-circle-user user_profile"></i>
               </button>
             </div>

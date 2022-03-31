@@ -1,10 +1,18 @@
-.navigation_bar{
+.category_list{
+  background: #f8f9fa;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-@media(max-width:1500px){
-  .navigation_bar{
-    flex-direction: column;
+
+@media(max-width:1400px){
+  .abc{
+    background: #f8f9fa;
+
+    .category_list{
+      background:none;
+    }
   }
+  
 }

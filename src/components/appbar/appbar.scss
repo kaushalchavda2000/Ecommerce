@@ -1,24 +1,92 @@
-.logo_title{
-  font-size: 30px;
-  font-weight: 700;
+.navbar_content{
+  margin:16px;
+
   .logo{
     display:inline-block;
     height:40px;
-    width:30px;
-    background:green;
+    width:40px;
+    background:linear-gradient(to right,#2979FF 0%,#4C589E 100%);
     text-align:center;
-    font-size:25px;
+    font-size:24px;
     font-weight:700;
     color:white;
-    border-radius:5px;
+    border-radius:6px;
+    margin-right: 12px;
+  }
+  
+  .logo_title{
+    display: inline-block;
+    color: #0C2146;
+    height: 36px;
+    width: 124px;
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 500;
+    margin-right: 22px;
+  }
+
+  .list_item{
+    a{
+      color:#5A5B6A !important;
+    }
+  }
+  
+  .searchbar{
+    width: 668px;
+    height: 48px;
+    border-radius: 99px;
+  }
+
+  .sign-in-button{
+    height: 40px;
+    width: 104px;
+  }
+
+  .my-cart-button{
+    height: 40px;
+    width: 99px;
+    margin-left: 21px;
+    margin-right: 16px;
+  }
+
+  .user-profile-button{
+    height: 40px;
+    width: 40px;
+  }
+  
+  .user_profile{
+    font-size: 40px;
+    color: #2264D1;
   }
 }
 
-.searchbar{
-  border-radius: 20px;
+@media(max-width:1600px){
+  .navbar_content{
+    .searchbar{
+      width: 500px;
+      height: 40px;
+    }
+  }
 }
 
-.user_profile{
-  font-size: 40px;
-  color: green;
+@media(max-width:1400px){
+  .navbar_content{
+    .searchbar{
+      width: 350px;
+    }
+  }
+}
+
+@media(max-width:1200px){
+  .navbar_content{
+    margin: 10px;
+    padding: 0px;
+    .searchbar{
+      width: 100%;
+    }
+    .my-cart-button{
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
 }
