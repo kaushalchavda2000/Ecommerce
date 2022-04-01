@@ -1,0 +1,74 @@
+// .filterbox {
+//   // height: 300px;
+//   // width: 304px;
+
+//   // .caption {
+//   //   width: 304px;
+//   //   background: lightgray;
+//   //   text-align: center;
+//   //   padding-bottom: 10px;
+//   // }
+
+//   // .filters {
+//   //   display: flex;
+//   //   flex-direction: column;
+//   //   align-items: flex-start;
+//   //   width: 304px;
+//   //   background: lightgray;
+//   //   padding-left: 10px;
+//   // }
+
+//   // details > summary {
+//   //   list-style-type: none;
+//   // }
+
+//   // details > summary::-webkit-details-marker {
+//   //   display: none;
+//   // }
+
+//   // details > summary::after {
+//   //   content: "Filters ⮟";
+//   //   font-size: 20px;
+//   // }
+
+//   // details[open] > summary::after {
+//   //   content: "Filters ⮝";
+//   //   font-size: 20px;
+//   // }
+// }
+
+.accordionExample{
+  // width: 304px;
+  
+  .accordian_title{
+    height: 40px;
+    line-height: 24px;
+    color: #19191D;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  // .accordian_title::after{
+  //   display: none;
+  // }
+
+  .accordion-body{
+    padding: 6px 0px 8px 20px !important;
+    // .checkbox{
+    //   height: 40px;
+    // }
+  }
+
+}
+
+// @media(max-width:1600px){
+//   #accordionExample{
+//     width: 90%;
+//   }
+// }
+
+// @media(max-width:992px){
+//   #accordionExample{
+//     width: 304px;
+//   }
+// }

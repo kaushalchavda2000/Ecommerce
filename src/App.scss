@@ -3,24 +3,25 @@
     display: grid;
     // border: 2px solid black;
     grid-template-columns: 100%;
+    // grid-template-columns: 25.38% 74.61%;
   }
 }
 
-@media(min-width:576px){
-  .App{
-    .grid_container{
-      width: 1320px;
-    }
-  }
-}
+// @media(min-width:576px){
+//   .App{
+//     .grid_container{
+//       width: 1320px;
+//     }
+//   }
+// }
 
-@media(min-width:768px){
-  .App{
-    .grid_container{
-      width: 720px;
-    }
-  }
-}
+// @media(min-width:768px){
+//   .App{
+//     .grid_container{
+//       width: 720px;
+//     }
+//   }
+// }
 
 
 @media(min-width:992px){

@@ -6,7 +6,7 @@ import "./navbar.scss";
 
 const Navbar = () => {
   return (
-    <nav className="abc navbar navbar-expand-md navbar-light p-0 py-xxl-3">
+    <nav className="navigationbar navbar navbar-expand-md navbar-light p-0 py-xxl-3">
       <div className="container-fluid">
         {/* <a className="navbar-brand" href="#"></a> */}
         <button
