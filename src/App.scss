@@ -1,33 +1,15 @@
 .App{
   .grid_container{
     display: grid;
-    // border: 2px solid black;
+    width: 100%;
     grid-template-columns: 100%;
-    // grid-template-columns: 25.38% 74.61%;
   }
 }
 
-// @media(min-width:576px){
-//   .App{
-//     .grid_container{
-//       width: 1320px;
-//     }
-//   }
-// }
-
-// @media(min-width:768px){
-//   .App{
-//     .grid_container{
-//       width: 720px;
-//     }
-//   }
-// }
-
-
-@media(min-width:992px){
+@media(min-width:1051px){
   .App{
     .grid_container{
-      width: 960px;
+      width: 992px;
       grid-template-columns: 25.38% 74.61%;
     }
   }

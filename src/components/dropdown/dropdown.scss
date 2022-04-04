@@ -1,0 +1,16 @@
+.dropdown_container{
+  display: inline-block;
+  outline: 1px solid #5A5B6A;
+  outline-offset: -1px;
+  border-radius: 4px;
+
+  #first{
+    color: black;
+  }
+  .btn{
+    color: #787885;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}

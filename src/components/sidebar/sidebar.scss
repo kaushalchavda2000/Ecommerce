@@ -1,75 +1,86 @@
-.sidebar{
-  // border: 2px solid black;
+.sidebar {
   width: calc(100% - 24px);
   margin-right: 24px;
   padding: 25px 0px;
+  z-index: 99;
 
-  #close{
+  #toggaleButton {
     position: absolute;
-    height: 35px;
-    width: 35px;
+    right: -30px;
+    top: 0;
     font-size: 25px;
-    right: 20px;
-    background:none;
-    border: none;
+    line-height: 25px;
+    font-weight: 700;
+    height: 40px;
+    background: none;
+    border-radius: 5px;
+    display: none;
   }
 
-  .stores{
+  .stores {
     margin-bottom: 40px;
     width: 304px;
     height: 56px;
-    color: #2264D1;
+    color: #2264d1;
     font-size: 24px;
     font-weight: 700;
     line-height: 36px;
-    border: 1px solid #9DC2FF;
+    border: 1px solid #9dc2ff;
     border-radius: 8px;
     background-color: white;
   }
 
-  .accordion_container{
+  .accordion_container {
     width: 304px;
     margin-top: 25px;
   }
-  .details_container{
+  .details_container {
     padding-left: 10px;
     margin-bottom: 32px;
   }
 }
 
-@media(max-width:1600px){
-  .sidebar{
-    .accordion_container,.stores{
+@media (max-width: 1600px) {
+  .sidebar {
+    .accordion_container,
+    .stores {
       width: 90%;
     }
   }
 }
 
-@media(max-width:1200px){
-  .sidebar{
-    .accordion_container,.stores{
+@media (max-width: 1200px) {
+  .sidebar {
+    .accordion_container,
+    .stores {
       width: 100%;
     }
   }
 }
 
-@media(max-width:992px){
-  .sidebar{
+@media (max-width: 1050px) {
+  .sidebar {
     width: 220px;
-    // display: flex;
     margin-right: 0px;
     padding: 10px 10px;
     position: absolute;
     background-color: rgba(211, 211, 211, 0.404);
-    // transform: translateX(-220px);
+    transform: translateX(-220px);
+    transition: all 500ms ease;
 
-    .accordion_container,.stores{
-      width: 200px ;
-      // margin-top: 0px;
-      // margin-left: 10px;
+    #toggaleButton {
+      display: block;
     }
-    .stores{
+    .accordion_container,
+    .stores {
+      width: 200px;
+    }
+    .stores {
       margin-top: 50px;
     }
+  }
+
+  .opened {
+    transform: translateX(0px);
   }
 }

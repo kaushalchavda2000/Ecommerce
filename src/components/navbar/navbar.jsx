@@ -9,6 +9,8 @@ const Navbar = () => {
     <nav className="navigationbar navbar navbar-expand-md navbar-light p-0 py-xxl-3">
       <div className="container-fluid">
         {/* <a className="navbar-brand" href="#"></a> */}
+        <span></span>
+        {/* shifting category button  */}
         <button
           className="navbar-toggler p-2"
           type="button"
@@ -20,24 +22,27 @@ const Navbar = () => {
         >
           <span>Categories</span>
         </button>
-        <div className="collapse navbar-collapse justify-content-center" id="secondNavbar">
+        <div
+          className="collapse navbar-collapse justify-content-center"
+          id="secondNavbar"
+        >
           <ul className="navbar-nav mb-2 mb-lg-0 category_list">
-          <Category caption="clothes" />
-          <Category caption="Entertainment" />
-          <Category caption="Mobile" />  
-          <Category caption="Electronics" />
-          <Category caption="sports" />
-          <Category caption="Toys" />
-          <Category caption="Home appliences" />  
-          <Category caption="Cars" />
-          <Category caption="Vegetables" />
-          <Category caption="Drinks" />
-          <Category caption="Furniture" />  
-          <Category caption="Home & garden" />
-          <Category caption="Gatgets" />
-          <Category caption="Games" />
-          <Category caption="Books" />  
-          <Category caption="Bikes" />
+            <Category caption="clothes" />
+            <Category caption="Entertainment" />
+            <Category caption="Mobile" />
+            <Category caption="Electronics" />
+            <Category caption="sports" />
+            <Category caption="Toys" />
+            <Category caption="Home appliences" />
+            <Category caption="Cars" />
+            <Category caption="Vegetables" />
+            <Category caption="Drinks" />
+            <Category caption="Furniture" />
+            <Category caption="Home & garden" />
+            <Category caption="Gatgets" />
+            <Category caption="Games" />
+            <Category caption="Books" />
+            <Category caption="Bikes" />
           </ul>
         </div>
       </div>

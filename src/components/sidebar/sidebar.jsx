@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 
 import Accordion from "../accordion/accordion";
 import Checkbox from "../checkbox/checkbox";
@@ -8,23 +8,32 @@ import Anchor from "../anchor/anchor";
 import "./sidebar.scss";
 
 const Sidebar = () => {
+  const [isOpen, SetIsOpen] = useState(false);
 
-  // const closeButton = document.getElementById("close");
-  // const sideBar = document.getElementById("sidebar");
-  // closeButton.addEventListener("onclick",()=>{
-  //   sideBar.style.transform = translateX("220px");
-  // });
-
+  function handleToggle() {
+    SetIsOpen(!isOpen);
+    console.log(isOpen);
+  }
 
   return (
-    <div className="sidebar">
-      <button id="close" className="p-0">X</button>
+    <div className={`sidebar ${isOpen ? "opened" : ""}`}>
+      <button id="toggaleButton" onClick={handleToggle}>
+        {isOpen ? "❮" : "❯"}
+      </button>
       <button className="stores">Stores</button>
       <div className="accordion_container details_container">
         <Details title="All Categories" open={true}>
           <Details title="Electronics" open={true}>
             <div>
-              <Anchor link="#" text="cell phone" />
+              <Details title="cell phone" open={true}>
+                <div>
+                  <Anchor link="#" text="samsung" />
+                  <Anchor link="#" text="redmi" />
+                  <Anchor link="#" text="one plus" />
+                  <Anchor link="#" text="iPhone" />
+                  <Anchor link="#" text="nokia" />
+                </div>
+              </Details>
               <Anchor link="#" text="air conditioner" />
               <Anchor link="#" text="fan" />
               <Anchor link="#" text="refrigerator" />
