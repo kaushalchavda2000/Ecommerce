@@ -4,15 +4,15 @@ import "./card.scss";
 
 const Card = ({productImageURL, productText, price, additionalText, rating}) => {
   return (
-    <div class="card">
+    <div className="card">
       <div className="image_container">
-        <img src={productImageURL} class="card-img-top" alt="girl" />
+        <img src={productImageURL} className="card-img-top" alt="girl" />
       </div>
-      <div class="card-body">
-        <p class="card-text">
+      <div className="card-body">
+        <p className="card-text">
           {productText}
         </p>
-        <h5 class="card-title">{price}</h5>
+        <h5 className="card-title">{price}</h5>
         <p className="additional-text">
           {additionalText}
         </p>

@@ -3,11 +3,11 @@ import React from "react";
 import Dropdown from "../dropdown/dropdown";
 import Dropdownitem from "../dropdownItem/dropdownitem";
 import Card from "../card/card";
-import image from "./../../assets/team-2.jpg";
+// import image from "./../../assets/team-2.jpg";
 
 import "./maincontent.scss";
 
-const MainContent = () => {
+const MainContent = ({ products }) => {
   return (
     <div className="main_content">
       <div className="bg_container">
@@ -44,7 +44,18 @@ const MainContent = () => {
           </span>
         </div>
         <div className="cards_container">
-          <Card
+          {products.map((product) => {
+            return (
+              <Card key={product.sku}
+                productImageURL={product.images[0].href}
+                productText={product.name}
+                price={`$ ${product.regularPrice}`}
+                additionalText="Shipping is free"
+                rating="5.00"
+              />
+            );
+          })}
+          {/* <Card
             productImageURL={image}
             productText="Hello i am a new product. i am very unique.you can buy me."
             price="$49.50"
@@ -113,7 +124,7 @@ const MainContent = () => {
             price="$49.50"
             additionalText="Shipping is free"
             rating="5.00"
-          />
+          /> */}
         </div>
       </div>
     </div>
