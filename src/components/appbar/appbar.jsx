@@ -2,7 +2,25 @@ import React from "react";
 
 import "./appbar.scss";
 
-const Appbar = () => {
+const Appbar = ({setSearchQuery,getQueryResults}) => {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    getQueryResults();
+  }
+
+  // const onChangeHandler = (inputValue) => {
+  //   // setlastQuery(inputValue);
+  //   clearTimeout(searchTimeout);
+  //   searchTimeout = setTimeout(() => {
+  //     if (inputValue === "") {
+  //       getImages(listApi);
+  //     } else {
+  //       getImages(`${searchApi}&query=${inputValue}`, true);
+  //     }
+  //   }, 1000);
+  // };
+
   return (
     <div className="appbar">
       <nav className="navbar navbar-expand-xl navbar-light bg-light p-0">
@@ -39,12 +57,14 @@ const Appbar = () => {
                 </a>
               </li>
             </ul>
-            <form className="d-flex my-3 my-lg-0">
+            <form className="d-flex my-3 my-lg-0" onSubmit={handleSubmit}>
               <input
                 className="form-control me-2 searchbar"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                onChange={(event) => setSearchQuery(event.target.value)}
+                // onChange={handleSubmit}
               />
             </form>
             <div className="py-3 py-xl-0">
