@@ -2,11 +2,11 @@ import React from "react";
 
 import "./appbar.scss";
 
-const Appbar = ({setSearchQuery,getQueryResults}) => {
+const Appbar = ({setSearchQuery,generateQuery}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    getQueryResults();
+    generateQuery();
   }
 
   // const onChangeHandler = (inputValue) => {

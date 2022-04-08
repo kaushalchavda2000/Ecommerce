@@ -46,15 +46,22 @@ const MainContent = ({ products }) => {
         <div className="cards_container">
           {products.map((product) => {
             return (
-              <Card key={product.sku}
+              <Card
+                key={product.sku}
                 productImageURL={product.images[0].href}
                 productText={product.name}
                 price={`$ ${product.regularPrice}`}
                 additionalText="Shipping is free"
-                rating="5.00"
+                rating={product.customerReviewAverage || "0.0"}
               />
             );
           })}
+          
+          {/* <div className="spinner-border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div> */}
+
+
           {/* <Card
             productImageURL={image}
             productText="Hello i am a new product. i am very unique.you can buy me."

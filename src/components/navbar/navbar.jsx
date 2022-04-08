@@ -4,7 +4,7 @@ import Category from "../category/category";
 
 import "./navbar.scss";
 
-const Navbar = () => {
+const Navbar = ({ generateQuery, setSearchQuery }) => {
   return (
     <nav className="navigationbar navbar navbar-expand-md navbar-light p-0 py-xxl-3">
       <div className="container-fluid">
@@ -27,7 +27,11 @@ const Navbar = () => {
           id="secondNavbar"
         >
           <ul className="navbar-nav mb-2 mb-lg-0 category_list">
-            <Category caption="clothes" />
+            <Category
+              caption="Movies"
+              generateQuery={generateQuery}
+              setSearchQuery={setSearchQuery}
+            />
             <Category caption="Entertainment" />
             <Category caption="Mobile" />
             <Category caption="Electronics" />
