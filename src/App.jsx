@@ -67,7 +67,7 @@ function App() {
       <Routes>
         <Route
           exact
-          path="/*"
+          path="/Ecommerce/*"
           element={(
             <Homepage
               MY_API_KEY={MY_API_KEY}
@@ -81,7 +81,7 @@ function App() {
 
         <Route
           exact
-          path="/productdetails/:productId"
+          path="/Ecommerce/productdetails/:productId"
           element={(
             <Productdetailpage
               MY_API_KEY={MY_API_KEY}
@@ -92,7 +92,7 @@ function App() {
 
         <Route
           exact
-          path="/cart"
+          path="/Ecommerce/cart"
           element={(
             <Cart
               cartProduct={
@@ -125,7 +125,7 @@ function App() {
 
         <Route
           exact
-          path="/checkout"
+          path="/Ecommerce/checkout"
           element={(
             <Checkoutpage
               setCartProduct={setCartProduct}
@@ -146,7 +146,7 @@ function App() {
 
         <Route
           exact
-          path="/ordersuccesspage"
+          path="/Ecommerce/ordersuccesspage"
           element={(
             <Ordersuccesspage
               currentUser={currentUser}
