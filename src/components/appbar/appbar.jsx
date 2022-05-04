@@ -18,7 +18,10 @@ function Appbar({ setSearchQuery, generateQuery, setProducts }) {
     <div className="appbar">
       <nav className="navbar navbar-expand-xl navbar-light p-0">
         <div className="container-fluid appbar__content">
-          <Link className="navbar-brand d-flex align-items-center p-0" to="/Ecommerce/">
+          <Link
+            className="navbar-brand d-flex align-items-center p-0"
+            to="/Ecommerce/"
+          >
             <span className="appbar__logo">S</span>
             <div className="appbar__logo-title">Shopka</div>
           </Link>
@@ -69,7 +72,7 @@ function Appbar({ setSearchQuery, generateQuery, setProducts }) {
                 className="btn appbar__my-cart-button btn-outline-primary"
                 type="submit"
                 onClick={() => {
-                  navigate('/cart');
+                  navigate('/Ecommerce/cart');
                 }}
               >
                 My cart
