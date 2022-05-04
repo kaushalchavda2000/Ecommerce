@@ -1,33 +1,72 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "./checkbox.scss";
+import './checkbox.scss';
 
-const Checkbox = ({ value, id, label, handleFilters}) => {
+function Checkbox({
+  value,
+  id,
+  label,
+  status,
+  handleFilters,
+  name,
+  checkboxArray,
+  setCheckboxArray,
+}) {
+  const handleOnChange = (event) => {
+    const newArr = checkboxArray.map((obj) => {
+      const object = obj;
+      if (object.id === event.target.id) {
+        object.status = !object.status;
+      }
+      return object;
+    });
+    setCheckboxArray(newArr);
+    handleFilters(event.target.value, name);
+  };
+
   return (
     <div className="form-check mb-0 checkbox">
       <input
+        style={{ cursor: 'pointer' }}
         className="form-check-input"
         type="checkbox"
         value={value}
         id={id}
-        onChange={(event) => handleFilters(event.target.value)}
+        onChange={(event) => handleOnChange(event)}
+        checked={status}
       />
-      <label className="form-check-label" htmlFor={id}>
+      <label
+        className="form-check-label"
+        htmlFor={id}
+        style={{ cursor: 'pointer' }}
+      >
         {label}
       </label>
     </div>
-    // <div class="form-check mb-0 checkbox">
-    //   <input
-    //     class="form-check-input"
-    //     type="radio"
-    //     name="flexRadioDefault"
-    //     id={id}
-    //   />
-    //   <label class="form-check-label" for={id}>
-    //   {label}
-    //   </label>
-    // </div>
   );
+}
+
+Checkbox.propTypes = {
+  value: PropTypes.string,
+  id: PropTypes.string,
+  label: PropTypes.string,
+  status: PropTypes.bool,
+  handleFilters: PropTypes.func,
+  name: PropTypes.string,
+  checkboxArray: PropTypes.oneOfType([PropTypes.array]),
+  setCheckboxArray: PropTypes.func,
+};
+
+Checkbox.defaultProps = {
+  value: '',
+  id: '',
+  label: '',
+  status: false,
+  handleFilters: null,
+  name: '',
+  checkboxArray: [],
+  setCheckboxArray: null,
 };
 
 export default Checkbox;

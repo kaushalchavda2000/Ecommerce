@@ -1,22 +1,22 @@
-.navbar_content{
-  margin:16px;
+.appbar__content {
+  margin: 16px;
 
-  .logo{
-    display:inline-block;
-    height:40px;
-    width:40px;
-    background:linear-gradient(to right,#2979FF 0%,#4C589E 100%);
-    text-align:center;
-    font-size:24px;
-    font-weight:700;
-    color:white;
-    border-radius:6px;
+  .appbar__logo {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: linear-gradient(to right, #2979ff 0%, #4c589e 100%);
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    border-radius: 6px;
     margin-right: 12px;
   }
-  
-  .logo_title{
+
+  .appbar__logo-title {
     display: inline-block;
-    color: #0C2146;
+    color: #0c2146;
     height: 36px;
     width: 124px;
     font-size: 36px;
@@ -25,66 +25,66 @@
     margin-right: 22px;
   }
 
-  .list_item{
-    a{
-      color:#5A5B6A !important;
+  .appbar__list-item {
+    .nav-link {
+      color: #5a5b6a !important;
     }
   }
-  
-  .searchbar{
+
+  .appbar__searchbar {
     width: 668px;
     height: 48px;
     border-radius: 99px;
   }
 
-  .sign-in-button{
+  .appbar__sign-in-button {
     height: 40px;
     width: 104px;
   }
 
-  .my-cart-button{
+  .appbar__my-cart-button {
     height: 40px;
     width: 99px;
     margin-left: 21px;
     margin-right: 16px;
   }
 
-  .user-profile-button{
+  .appbar__user-profile-button {
     height: 40px;
     width: 40px;
   }
-  
-  .user_profile{
+
+  .appbar__user-profile-icon {
     font-size: 40px;
-    color: #2264D1;
+    color: #2264d1;
   }
 }
 
-@media(max-width:1600px){
-  .navbar_content{
-    .searchbar{
+@media (max-width: 1600px) {
+  .appbar__content {
+    .appbar__searchbar {
       width: 500px;
       height: 40px;
     }
   }
 }
 
-@media(max-width:1400px){
-  .navbar_content{
-    .searchbar{
+@media (max-width: 1400px) {
+  .appbar__content {
+    .appbar__searchbar {
       width: 350px;
     }
   }
 }
 
-@media(max-width:1200px){
-  .navbar_content{
+@media (max-width: 1200px) {
+  .appbar__content {
     margin: 10px;
     padding: 0px;
-    .searchbar{
+    .appbar__searchbar {
       width: 100%;
     }
-    .my-cart-button{
+    .appbar__my-cart-button {
       margin-left: 10px;
       margin-right: 10px;
     }

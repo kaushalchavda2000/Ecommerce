@@ -1,0 +1,65 @@
+.success-page {
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .payment {
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0px -3px 8px rgba(90, 91, 106, 0.24),
+      0px 3px 8px rgba(90, 91, 106, 0.24);
+    .payment__header {
+      background: #0c2146;
+      padding: 20px;
+      border-radius: 20px 20px 0px 0px;
+      .payment__check {
+        margin: 0px auto;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #fff;
+        text-align: center;
+        i {
+          vertical-align: middle;
+          line-height: 50px;
+          font-size: 30px;
+        }
+      }
+    }
+    .payment__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      .payment__username {
+        margin-top: 20px;
+      }
+      .payment__message {
+        margin-bottom: 20px;
+      }
+      .payment__summary-title {
+        width: 100%;
+        font-weight: 700;
+        padding-bottom: 10px;
+        border-bottom: 2px dashed black;
+      }
+      .payment__link-container {
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 20px;
+        background: #0c2146;
+        margin: 20px 0px;
+        .payment__link {
+          font-size: 20px;
+          font-weight: 500;
+          color: white;
+        }
+      }
+      .payment__link-container:hover {
+        background: #000;
+      }
+    }
+  }
+}

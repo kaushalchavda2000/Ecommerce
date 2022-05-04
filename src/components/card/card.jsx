@@ -1,31 +1,59 @@
-import React from "react";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import "./card.scss";
+import './card.scss';
 
-const Card = ({productImageURL, productText, price, additionalText, rating}) => {
+function Card({
+  sku, link, name, price, rating,
+}) {
+  const navigate = useNavigate();
+
+  const showProductDetails = () => {
+    navigate(`/productdetails/${sku}`);
+  };
+
   return (
-    <div className="card">
-      <div className="image_container">
-        <img src={productImageURL} className="card-img-top" alt="girl" />
+    <div
+      role="button"
+      tabIndex={0}
+      className="card"
+      onClick={showProductDetails}
+      onKeyUp={() => {}}
+    >
+      <div className="card__image-container">
+        <img src={link} className="card-img-top" alt="product" />
       </div>
-      <div className="card-body">
-        <p className="card-text">
-          {productText}
-        </p>
-        <h5 className="card-title">{price}</h5>
-        <p className="additional-text">
-          {additionalText}
-        </p>
+      <div className="card__body">
+        <p className="card__name">{name}</p>
+        <h5 className="card__price">{`$ ${price}`}</h5>
+        <p className="card__additional-text">Shipping is free</p>
         <div>
-          <span className="rating-stars">⭐⭐⭐⭐⭐</span>
-          <span className="rating-number">{rating}</span>
-          <button className="btn btn-outline-primary" type="submit">
+          <span className="card__rating-stars">⭐⭐⭐⭐⭐</span>
+          <span className="card__rating-value">{rating}</span>
+          <button className="card__btn" type="submit">
             💙 Watch
           </button>
         </div>
       </div>
     </div>
   );
+}
+
+Card.propTypes = {
+  sku: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  link: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  rating: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+};
+
+Card.defaultProps = {
+  sku: 0,
+  link: '',
+  name: '',
+  price: '',
+  rating: '',
 };
 
 export default Card;

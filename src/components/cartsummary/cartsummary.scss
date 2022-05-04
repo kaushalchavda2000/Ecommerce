@@ -1,0 +1,20 @@
+.cart__total-table {
+  width: 100%;
+  border: 1px solid lightgrey;
+
+  .cart__subtotal,
+  .cart__shipping,
+  .cart__total {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .cart__shipping {
+    margin-bottom: 50px;
+  }
+  .cart__total {
+    border-top: 1px solid lightgrey;
+  }
+}

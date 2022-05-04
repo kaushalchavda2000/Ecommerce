@@ -1,0 +1,112 @@
+.cartcard {
+  display: grid;
+  grid-template-columns: 25% 35% 20% 20%;
+  padding: 20px 10px;
+  border-top: 1px solid lightgray;
+
+  .cartcard__image {
+    height: 260px;
+    width: 260px;
+    align-self: center;
+    justify-self: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .cartcard__details {
+    .cartcard__name {
+      font-size: 20px;
+    }
+    .cartcard__pricetitle {
+      font-size: 13px;
+      font-weight: 500;
+      color: green;
+      margin-top: 20px;
+    }
+    .cartcard__price {
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .cartcard__rating,
+    .cartcard__reviewcount {
+      font-weight: 500;
+      color: white;
+      margin: 0px 5px;
+      padding: 3px;
+      border-radius: 3px;
+      background-color: green;
+    }
+    .cartcard__remove {
+      width: 200px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-weight: 500;
+      background-color: green;
+      color: white;
+    }
+  }
+  .cartcard__quantity {
+    .cartcard__minus-btn,
+    .cartcard__plus-btn,
+    .cartcard__input {
+      font-weight: 700;
+      border: 1px solid lightgrey;
+      border-radius: 2px;
+    }
+    .cartcard__input {
+      display: inline-block;
+      height: 26px;
+      width: 50px;
+      margin: 0px 5px;
+      text-align: center;
+    }
+  }
+  .cartcard__quantity,
+  .cartcard__total-price {
+    justify-self: center;
+  }
+  .cartcard__total-price {
+    .cartcard__total-price-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: green;
+    }
+    .cartcard__total-price-value {
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .cartcard {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    .cartcard__quantity,
+    .cartcard__total-price {
+      margin-top: 20px;
+    }
+    .cartcard__total-price {
+      justify-self: start;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .cartcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .cartcard__details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

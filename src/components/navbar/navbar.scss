@@ -1,15 +1,6 @@
-.category_list {
-  background: #f8f9fa;
+.category-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 
-@media (max-width: 1400px) {
-  .navigationbar {
-    background: #f8f9fa;
-    .category_list {
-      background: none;
-    }
-  }
-}

@@ -1,0 +1,28 @@
+.checkout {
+  .checkout__order-summary-title {
+    margin-top: 20px;
+  }
+  .checkout__order-summary {
+    border: 1px solid lightgray;
+  }
+  .checkout__form-heading {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+  }
+  .checkout__form {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    .checkout__validation-feedback {
+      color: red;
+      font-weight: 700;
+    }
+  }
+}
+
+.checkout__message {
+  margin-top: 100px;
+}

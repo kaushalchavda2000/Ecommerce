@@ -1,0 +1,41 @@
+.homepage {
+  .homepage__grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    position: relative;
+  }
+}
+
+@media (min-width: 1051px) {
+  .homepage {
+    .homepage__grid-container {
+      width: 992px;
+      grid-template-columns: 25.38% 74.61%;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .homepage {
+    .homepage__grid-container {
+      width: 1140px;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .homepage {
+    .homepage__grid-container {
+      width: 1320px;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .homepage {
+    .homepage__grid-container {
+      width: 1493px;
+    }
+  }
+}

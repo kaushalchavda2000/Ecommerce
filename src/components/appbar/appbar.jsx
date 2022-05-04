@@ -1,34 +1,27 @@
-import React from "react";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import "./appbar.scss";
+import './appbar.scss';
 
-const Appbar = ({setSearchQuery,generateQuery}) => {
+function Appbar({ setSearchQuery, generateQuery, setProducts }) {
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     generateQuery();
-  }
-
-  // const onChangeHandler = (inputValue) => {
-  //   // setlastQuery(inputValue);
-  //   clearTimeout(searchTimeout);
-  //   searchTimeout = setTimeout(() => {
-  //     if (inputValue === "") {
-  //       getImages(listApi);
-  //     } else {
-  //       getImages(`${searchApi}&query=${inputValue}`, true);
-  //     }
-  //   }, 1000);
-  // };
+    setProducts([]);
+    navigate('/');
+  };
 
   return (
     <div className="appbar">
-      <nav className="navbar navbar-expand-xl navbar-light bg-light p-0">
-        <div className="container-fluid navbar_content">
-          <a className="navbar-brand d-flex align-items-center p-0" href="#">
-            <span className="logo" >S</span>
-            <div className="logo_title">Shopka</div>
-          </a>
+      <nav className="navbar navbar-expand-xl navbar-light p-0">
+        <div className="container-fluid appbar__content">
+          <Link className="navbar-brand d-flex align-items-center p-0" to="/">
+            <span className="appbar__logo">S</span>
+            <div className="appbar__logo-title">Shopka</div>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -38,44 +31,54 @@ const Appbar = ({setSearchQuery,generateQuery}) => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon" />
           </button>
-          {/* remove the above button and remove the collapse class below to always show navigation bar */}
           <div
             className="collapse navbar-collapse d-xl-flex justify-content-lg-between"
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav mb-2 mb-lg-0">
-              <li className="nav-item list_item px-xl-3 py-xl-1">
-                <a className="nav-link" aria-current="page" href="#">
+              <li className="nav-item appbar__list-item px-xl-3 py-xl-1">
+                <Link className="nav-link" aria-current="page" to="/">
                   Sell on Shopka
-                </a>
+                </Link>
               </li>
-              <li className="nav-item list_item px-xl-3 py-xl-1">
-                <a className="nav-link" href="#">
+              <li className="nav-item appbar__list-item px-xl-3 py-xl-1">
+                <Link className="nav-link" to="/">
                   Register
-                </a>
+                </Link>
               </li>
             </ul>
             <form className="d-flex my-3 my-lg-0" onSubmit={handleSubmit}>
               <input
-                className="form-control me-2 searchbar"
+                className="form-control me-2 appbar__searchbar"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
                 onChange={(event) => setSearchQuery(event.target.value)}
-                // onChange={handleSubmit}
               />
             </form>
             <div className="py-3 py-xl-0">
-              <button className="btn sign-in-button btn-outline-primary" type="submit">
+              <button
+                className="btn appbar__sign-in-button btn-outline-primary"
+                type="submit"
+              >
                 Sign in
               </button>
-              <button className="btn my-cart-button btn-outline-primary" type="submit">
+              <button
+                className="btn appbar__my-cart-button btn-outline-primary"
+                type="submit"
+                onClick={() => {
+                  navigate('/cart');
+                }}
+              >
                 My cart
               </button>
-              <button className="btn user-profile-button btn-outline-none p-0" type="submit">
-                <i className="fa-solid fa-circle-user user_profile"></i>
+              <button
+                className="btn appbar__user-profile-button btn-outline-none p-0"
+                type="submit"
+              >
+                <i className="fa-solid fa-circle-user appbar__user-profile-icon" />
               </button>
             </div>
           </div>
@@ -83,6 +86,18 @@ const Appbar = ({setSearchQuery,generateQuery}) => {
       </nav>
     </div>
   );
+}
+
+Appbar.propTypes = {
+  setSearchQuery: PropTypes.func,
+  generateQuery: PropTypes.func,
+  setProducts: PropTypes.func,
+};
+
+Appbar.defaultProps = {
+  setSearchQuery: null,
+  generateQuery: null,
+  setProducts: null,
 };
 
 export default Appbar;

@@ -1,0 +1,110 @@
+.sidebar {
+  width: calc(100% - 24px);
+  margin-right: 24px;
+  padding: 25px 0px;
+  z-index: 98;
+  .sidebar__stores-btn {
+    margin-bottom: 40px;
+    width: 304px;
+    height: 56px;
+    color: #2264d1;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    border: 1px solid #9dc2ff;
+    border-radius: 8px;
+    background-color: white;
+  }
+
+  .sidebar__accordion-container {
+    width: 304px;
+    margin-top: 25px;
+  }
+  .sidebar__details-container {
+    padding-left: 10px;
+    margin-bottom: 32px;
+    .sidebar__subcategories:hover {
+      background-color: #aeafb1;
+    }
+  }
+}
+
+#sidebar__toggaleButton {
+  position: absolute;
+  top: 0;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 700;
+  height: 40px;
+  border-radius: 5px;
+  display: none;
+  z-index: 99;
+}
+
+@media (max-width: 1600px) {
+  .sidebar {
+    .sidebar__accordion-container,
+    .sidebar__stores-btn {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .sidebar {
+    .sidebar__accordion-container,
+    .sidebar__stores-btn {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .sidebar {
+    width: 280px;
+    height: 130vh;
+    overflow-y: scroll;
+    margin-right: 0px;
+    padding: 10px 10px;
+    position: absolute;
+    top: 0;
+    background-color: rgba(241, 239, 239, 0.815);
+    transform: translateX(-280px);
+    transition: all 500ms ease;
+    .sidebar__accordion-container,
+    .sidebar__stores-btn {
+      width: 250px;
+    }
+    .sidebar__stores-btn {
+      margin-top: 50px;
+    }
+  }
+
+  .opened {
+    transform: translateX(0px);
+  }
+  #sidebar__toggaleButton {
+    display: block;
+    transition: all 500ms ease;
+  }
+  .move {
+    transform: translateX(250px);
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 230px;
+    transform: translateX(-230px);
+    .sidebar__accordion-container,
+    .sidebar__stores-btn {
+      width: 210px;
+    }
+  }
+  .opened {
+    transform: translateX(0px);
+  }
+  .move {
+    transform: translateX(200px);
+  }
+}

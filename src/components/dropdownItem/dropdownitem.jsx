@@ -1,13 +1,36 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Dropdownitem = ({link, title}) => {
+function Dropdownitem({
+  title, value, order, sortProducts,
+}) {
   return (
-    <li>
-      <a className="dropdown-item" href={link}>
+    <li style={{ cursor: 'pointer' }}>
+      <div
+        role="link"
+        tabIndex={0}
+        className="dropdown-item"
+        onClick={() => sortProducts(value, order)}
+        onKeyUp={() => {}} // temporary soln.
+      >
         {title}
-      </a>
+      </div>
     </li>
   );
+}
+
+Dropdownitem.propTypes = {
+  title: PropTypes.string,
+  value: PropTypes.string,
+  order: PropTypes.string,
+  sortProducts: PropTypes.func,
+};
+
+Dropdownitem.defaultProps = {
+  title: '',
+  value: '',
+  order: '',
+  sortProducts: null,
 };
 
 export default Dropdownitem;

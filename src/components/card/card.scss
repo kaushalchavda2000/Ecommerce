@@ -2,66 +2,76 @@
   width: 259px;
   height: 472px;
   padding: 16px;
-  // border: none;
 
-  .image_container {
+  .card__image-container {
     width: 227px;
     height: 224px;
 
     img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
       border-radius: 4px;
     }
   }
-  .card-body {
+  .card__body {
     padding: 0;
     margin-top: 12px;
-    .card-text {
+    .card__name {
+      height: 72px;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
-      color: #19191D;
+      color: #19191d;
       margin-bottom: 0;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
-    .card-title{
+    .card__price {
       font-size: 24px;
       font-weight: 700;
       line-height: 36px;
       color: #000000;
       margin: 8px 0px;
     }
-    .additional-text{
+    .card__additional-text {
       color: #787885;
       font-size: 14px;
       font-weight: 400;
       line-height: 20px;
       margin-bottom: 9px;
-
     }
-    .btn{
+    .card__btn {
       width: 88px;
       height: 32px;
-      outline: 1px solid #9DC2FF;
+      outline: 1px solid #9dc2ff;
       outline-offset: 1px;
       border: none;
       border-radius: 4px;
+      background: none;
       padding: 0;
       font-size: 14px;
       font-weight: 500;
       line-height: 20px;
-      color: #2264D1;
+      color: #2264d1;
     }
-    .rating-stars{
+    .card__rating-stars {
       font-size: 10px;
       margin-right: 8px;
     }
-    .rating-number{
+    .card__rating-value {
       font-size: 14px;
       font-weight: 500;
       line-height: 22px;
-      color: #5E6366;
+      color: #5e6366;
       margin-right: 17px;
     }
   }
+}
+
+.card:hover {
+  box-shadow: 0px -3px 8px rgba(90, 91, 106, 0.24),
+    0px 3px 8px rgba(90, 91, 106, 0.24);
 }

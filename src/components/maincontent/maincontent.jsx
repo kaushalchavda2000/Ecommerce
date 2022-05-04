@@ -1,26 +1,53 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Dropdown from "../dropdown/dropdown";
-import Dropdownitem from "../dropdownItem/dropdownitem";
-import Card from "../card/card";
-// import image from "./../../assets/team-2.jpg";
+import { Dropdown, Dropdownitem, Card } from '../components';
 
-import "./maincontent.scss";
+import './maincontent.scss';
 
-const MainContent = ({ products }) => {
+function MainContent({
+  products,
+  sortProducts,
+  showSpinner,
+  getProducts,
+  productsAPI,
+}) {
   return (
-    <div className="main_content">
-      <div className="bg_container">
-        <div className="dropdowns d-flex flex-wrap">
+    <div className="main-content">
+      <div className="main-content__content-container">
+        <div className="main-content__dropdowns d-flex flex-wrap">
           <span className="dropdown_wrapper ps-3 pt-3 ps-sm-3 pe-sm-2">
-            <Dropdown
-              dropdownTitle="Useless First"
-              dropdownMenuButtonId="first"
-            >
-              <Dropdownitem link="#" title="first item" />
-              <Dropdownitem link="#" title="second" />
-              <Dropdownitem link="#" title="third item" />
-              <Dropdownitem link="#" title="fourth" />
+            <Dropdown dropdownTitle="Sort By" dropdownMenuButtonId="first">
+              <Dropdownitem
+                title="Newest First"
+                value="releaseDate"
+                order="dsc"
+                sortProducts={sortProducts}
+              />
+              <Dropdownitem
+                title="Price:Low to High"
+                value="regularPrice"
+                order="asc"
+                sortProducts={sortProducts}
+              />
+              <Dropdownitem
+                title="Price:High to Low"
+                value="regularPrice"
+                order="dsc"
+                sortProducts={sortProducts}
+              />
+              <Dropdownitem
+                title="Ratings:Low to High"
+                value="customerReviewAverage"
+                order="asc"
+                sortProducts={sortProducts}
+              />
+              <Dropdownitem
+                title="Ratings:High to Low"
+                value="customerReviewAverage"
+                order="dsc"
+                sortProducts={sortProducts}
+              />
             </Dropdown>
           </span>
           <span className="dropdown_wrapper ps-3 pt-3 px-sm-2">
@@ -43,99 +70,61 @@ const MainContent = ({ products }) => {
             </Dropdown>
           </span>
         </div>
-        <div className="cards_container">
-          {products.map((product) => {
-            return (
+        <div className="main-content__cards-container">
+          {products.length !== 0
+            ? products.map((product) => (
               <Card
                 key={product.sku}
-                productImageURL={product.images[0].href}
-                productText={product.name}
-                price={`$ ${product.regularPrice}`}
-                additionalText="Shipping is free"
-                rating={product.customerReviewAverage || "0.0"}
+                sku={product.sku}
+                link={product.images[0].href}
+                name={product.name}
+                price={product.regularPrice}
+                rating={product.customerReviewAverage || 0}
               />
-            );
-          })}
-          
-          {/* <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div> */}
-
-
-          {/* <Card
-            productImageURL={image}
-            productText="Hello i am a new product. i am very unique.you can buy me."
-            price="$49.50"
-            additionalText="Shipping is free"
-            rating="5.00"
-          />
-          <Card
-            productImageURL={image}
-            productText="Hello i am a new product. i am very unique.you can buy me."
-            price="$49.50"
-            additionalText="Shipping is free"
-            rating="5.00"
-          />
-          <Card
-            productImageURL={image}
-            productText="Hello i am a new product. i am very unique.you can buy me."
-            price="$49.50"
-            additionalText="Shipping is free"
-            rating="5.00"
-          />
-          <Card
-            productImageURL={image}
-            productText="Hello i am a new product. i am very unique.you can buy me."
-            price="$49.50"
-            additionalText="Shipping is free"
-            rating="5.00"
-          />
-          <Card
-            productImageURL={image}
-            productText="Hello i am a new product. i am very unique.you can buy me."
-            price="$49.50"
-            additionalText="Shipping is free"
-            rating="5.00"
-          />
-          <Card
-            productImageURL={image}
-            productText="Hello i am a new product. i am very unique.you can buy me."
-            price="$49.50"
-            additionalText="Shipping is free"
-            rating="5.00"
-          />
-          <Card
-            productImageURL={image}
-            productText="Hello i am a new product. i am very unique.you can buy me."
-            price="$49.50"
-            additionalText="Shipping is free"
-            rating="5.00"
-          />
-          <Card
-            productImageURL={image}
-            productText="Hello i am a new product. i am very unique.you can buy me."
-            price="$49.50"
-            additionalText="Shipping is free"
-            rating="5.00"
-          />
-          <Card
-            productImageURL={image}
-            productText="Hello i am a new product. i am very unique.you can buy me."
-            price="$49.50"
-            additionalText="Shipping is free"
-            rating="5.00"
-          />
-          <Card
-            productImageURL={image}
-            productText="Hello i am a new product. i am very unique.you can buy me."
-            price="$49.50"
-            additionalText="Shipping is free"
-            rating="5.00"
-          /> */}
+            ))
+            : !showSpinner
+              && products.length === 0 && (
+                <div
+                  className="alert alert-danger main-content__error-msg"
+                  role="alert"
+                >
+                  <div>Something Went Wrong!</div>
+                  <button
+                    type="button"
+                    className="main-content__error-msg-btn"
+                    onClick={() => getProducts(productsAPI)}
+                  >
+                    Try Again
+                  </button>
+                </div>
+            )}
         </div>
+        {showSpinner && (
+          <div className="main-content__spinner">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
+}
+
+MainContent.propTypes = {
+  products: PropTypes.oneOfType([PropTypes.array]),
+  sortProducts: PropTypes.func,
+  showSpinner: PropTypes.bool,
+  getProducts: PropTypes.func,
+  productsAPI: PropTypes.string,
+};
+
+MainContent.defaultProps = {
+  products: [],
+  sortProducts: null,
+  showSpinner: false,
+  getProducts: null,
+  productsAPI: '',
 };
 
 export default MainContent;
