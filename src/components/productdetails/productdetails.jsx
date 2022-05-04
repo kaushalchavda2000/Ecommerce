@@ -9,7 +9,7 @@ function Productdetails({ selectedProduct, setCartProduct }) {
 
   const addToCartHandler = () => {
     setCartProduct(selectedProduct);
-    navigate('/cart');
+    navigate('/Ecommerce/cart');
   };
 
   return (

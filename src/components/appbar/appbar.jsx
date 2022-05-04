@@ -11,14 +11,14 @@ function Appbar({ setSearchQuery, generateQuery, setProducts }) {
     event.preventDefault();
     generateQuery();
     setProducts([]);
-    navigate('/');
+    navigate('/Ecommerce/');
   };
 
   return (
     <div className="appbar">
       <nav className="navbar navbar-expand-xl navbar-light p-0">
         <div className="container-fluid appbar__content">
-          <Link className="navbar-brand d-flex align-items-center p-0" to="/">
+          <Link className="navbar-brand d-flex align-items-center p-0" to="/Ecommerce/">
             <span className="appbar__logo">S</span>
             <div className="appbar__logo-title">Shopka</div>
           </Link>
@@ -39,12 +39,12 @@ function Appbar({ setSearchQuery, generateQuery, setProducts }) {
           >
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item appbar__list-item px-xl-3 py-xl-1">
-                <Link className="nav-link" aria-current="page" to="/">
+                <Link className="nav-link" aria-current="page" to="/Ecommerce/">
                   Sell on Shopka
                 </Link>
               </li>
               <li className="nav-item appbar__list-item px-xl-3 py-xl-1">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/Ecommerce/">
                   Register
                 </Link>
               </li>

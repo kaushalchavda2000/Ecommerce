@@ -14,7 +14,7 @@ function Category({ id, caption, generateCategoriesQuery }) {
       className="nav-item"
       onClick={() => {
         generateCategoriesQuery(id);
-        navigate(`/category/${id}`);
+        navigate(`/Ecommerce/category/${id}`);
       }}
       onKeyUp={() => {}} // fix required
     >

@@ -10,7 +10,7 @@ function Card({
   const navigate = useNavigate();
 
   const showProductDetails = () => {
-    navigate(`/productdetails/${sku}`);
+    navigate(`/Ecommerce/productdetails/${sku}`);
   };
 
   return (

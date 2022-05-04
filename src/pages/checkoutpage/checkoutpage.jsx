@@ -162,7 +162,7 @@ function Checkoutpage({
       setUsersData((prev) => [...prev, userDetail]);
       setCartData([]);
       setCurrentUser(userDetail);
-      navigate('/ordersuccesspage');
+      navigate('/Ecommerce/ordersuccesspage');
     }
   };
 
@@ -329,7 +329,7 @@ function Checkoutpage({
   ) : (
     <h1 className="container d-flex flex-column flex-md-row justify-content-center text-center checkout__message">
       <span>Your Cart is Empty.</span>
-      <Link to="/">Explore Products</Link>
+      <Link to="/Ecommerce/">Explore Products</Link>
     </h1>
   );
 }

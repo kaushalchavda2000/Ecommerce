@@ -31,7 +31,7 @@ function Ordersuccesspage({
                 />
                 <div className="payment__link-container mx-auto">
                   <Link
-                    to="/"
+                    to="/Ecommerce/"
                     className="payment__link"
                     style={{ textDecoration: 'none' }}
                   >

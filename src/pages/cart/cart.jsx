@@ -76,7 +76,7 @@ function Cart({
       />
 
       <div className="cart__checkout-btn">
-        <button type="button" onClick={() => navigate('/checkout')}>
+        <button type="button" onClick={() => navigate('/Ecommerce/checkout')}>
           PROCEED TO CHECKOUT
         </button>
       </div>
@@ -84,7 +84,7 @@ function Cart({
   ) : (
     <h1 className="container d-flex flex-column flex-md-row justify-content-center text-center cart__message">
       <span>Your Cart is Empty.</span>
-      <Link to="/">Explore Products</Link>
+      <Link to="/Ecommerce/">Explore Products</Link>
     </h1>
   );
 }
